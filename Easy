@@ -1,0 +1,90 @@
+1. Two Sum
+public class Solution {
+    public static void main(String[] args) {
+        int[]nums={3,2,4};
+       twoSum(nums, 6);
+    }
+     public static int[] twoSum(int[] nums, int target) {
+      for(int i=0;i<nums.length;i++){
+          for(int j=i+1;j<nums.length;j++){
+              if(nums[j]==target - nums[i]){
+                  
+                  return new int[]{i,j};
+              }  
+          }
+      }   
+    throw new IllegalArgumentException("No two sum solution");
+    }
+}
+
+7. Reverse Integer
+class Solution {
+    public int reverse(int x) {
+        long rev=0;
+        while(x!=0){
+        rev = rev*10 + x%10;
+            x = x/10;     
+             if(rev > Integer.MAX_VALUE || rev < Integer.MIN_VALUE)
+                return 0;
+        }
+        return (int)rev;
+    }
+    }
+
+9. Palindrome Number
+public class Solution {
+    public static boolean isPalindrome(int x) {
+        String str = new String();
+     str = Integer.toString(x);
+        int length=str.length();
+      int  begin  = 0;
+    int end    = length - 1;
+    int middle = (begin + end)/2;
+ int i;
+    for (i = begin; i <= middle; i++) {
+      if (str.charAt(begin) == str.charAt(end)) {
+        begin++;
+        end--;
+      }
+      else {
+        break;
+      }
+    }
+     if (i == middle + 1) {
+      System.out.println("Palindrome");
+      return true;
+    }
+    else {
+      System.out.println("Not a palindrome");
+    } 
+        return false;
+    }
+    public static void main(String[]args){
+        Scanner kb=new Scanner(System.in);
+        System.out.println("Input an integer: ");
+        int n=kb.nextInt();
+        isPalindrome(n);
+    }
+}
+
+27. Remove Element
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int rem = 0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]!=val){
+                nums[rem] = nums[i];
+                rem++;
+            }
+        }
+        return rem;
+    }
+}
+
+28. Implement strStr()
+class Solution {
+    public int strStr(String haystack, String needle) {
+ int indexOf =haystack.indexOf(needle);
+        return indexOf;
+}
+}    
